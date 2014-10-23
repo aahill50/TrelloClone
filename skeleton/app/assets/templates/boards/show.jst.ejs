@@ -2,11 +2,18 @@
 <button class="delete" data-id="<%= board.id %>">Delete this board</button>
 
 <% var lists = board.get("lists") %>
-<ul>
+<ul class="list-container group">
   <% lists.forEach( function (list) { %>
-    <li>
-     <%= list.title %>
-    </li>
+    <ul class="card-container group">
+      <li class="list-title">
+       <%= list.title %>
+      </li>
+    <% list.cards.forEach( function (card) { %>
+      <li class="card">
+        <%= card.title %>
+      </li>
+    <% }) %>
+    </ul>
   <% }) %>
 </ul>
 <a href="/#boards/<%= board.id %>/lists/new">Create New List</a>

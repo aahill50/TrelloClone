@@ -8,6 +8,11 @@ json.user @board.user.email
 json.lists @board.lists do |list|
   json.title list.title
   json.ord list.ord
+  json.cards list.cards do |card|
+    json.title card.title
+    json.description card.description
+    json.ord card.ord
+  end
 end
 json.members @board.members do |member|
   json.email member.email
