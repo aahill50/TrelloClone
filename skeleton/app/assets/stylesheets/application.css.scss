@@ -53,6 +53,19 @@ span.delete {
   border-bottom-left-radius: 4px;
 }
 
+a.add-list {
+  float: left;
+  background: green;
+  position: relative;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding: 10px 0 8px 12px;
+  background: #195079;
+  width: 250px;
+  color: #AEC5D3;
+  height: 40px;
+  word-wrap: break-word
+}
 li.card {
   background: white;
   transition: background .05s;

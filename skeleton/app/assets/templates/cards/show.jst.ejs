@@ -1,0 +1,15 @@
+<li class="card">
+    <span class="card delete" data-card-id="<%= card.id %>">
+      &times;
+    </span>
+  </li>
+  <div class="new-card">
+    <a href="#" class="add-card-link" data-list-id=<%= list.id %>>Add a new Card</a>
+    <form class="inactive add-card-form" data-list-id=<%= list.id %>>
+      <textarea
+        name="card[title]"
+        placeholder="Enter a title"></textarea>
+
+      <button class="submit">Add Card</button>
+    </form>
+  </div>

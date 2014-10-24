@@ -1,4 +1,11 @@
 TrelloClone.Views.ShowBoard = Backbone.View.extend({
+  initialize: function (options) {
+    this.board = options.model;
+    this.lists = options.lists;
+    this.listenTo(this.lists, "all", this.render)
+  },
+
+
   template: JST["boards/show"],
 
   events: {
@@ -9,10 +16,9 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
   },
 
   render: function () {
-    var board = this.model
-    var content = this.template({ board: board })
-    var lists = board.lists;
-
+    console.log("rendering")
+    var content = this.template({ board: this.board, lists: this.lists })
+    var lists = this.lists;
     this.$el.html(content)
     return this;
   },
@@ -69,17 +75,18 @@ TrelloClone.Views.ShowBoard = Backbone.View.extend({
   },
 
   deleteCard: function (event) {
+
     event.preventDefault(event);
     var that = this;
-
     var $target = $(event.currentTarget)
-    var cards = new TrelloClone.Collections.Cards
-    var card = cards.getOrFetch($target.data("card-id"));
+    var card = new TrelloClone.Models.Card({id: $target.data("card-id")})
+    var list = new TrelloClone.Models.List({id: $target.data("list-id")})
 
-    console.log("card id",card.id)
     card.destroy({
       success: function () {
-        that.render();
+        console.log("triggering")
+        debugger
+        that.lists.trigger("sync")
       }
     })
   }

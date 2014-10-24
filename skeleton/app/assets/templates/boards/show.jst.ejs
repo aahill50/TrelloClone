@@ -1,7 +1,35 @@
 <h3><%= board.escape("title") %></h3>
 <button class="board delete" data-id="<%= board.id %>">Delete this board</button>
 
-<div class="row">
-  <ul class="list-container group col-xs-12"></ul>
+<div class="row>
+  <ul class="list-container group col-xs-12">
+    <% lists.forEach( function (list) { %>
+      <ul class="card-container group data-list-id=<%= list.id %>" >
+        <li class="list-title">
+         <%= list.get("title") %>
+        </li>
+      <% list.cards().forEach( function (card) { %>
+        <li class="card">
+          <%= card.get("title") %>
+          <span class="card delete"
+          data-list-id="<%= list.id %>"
+          data-card-id="<%= card.id %>">
+            &times;
+          </span>
+        </li>
+      <% }) %>
+      <div class="new-card">
+        <a href="#" class="add-card-link" data-list-id=<%= list.id %>>Add a new Card</a>
+        <form class="inactive add-card-form" data-list-id=<%= list.id %>>
+          <textarea
+            name="card[title]"
+            placeholder="Enter a title"></textarea>
+
+          <button class="submit">Add Card</button>
+        </form>
+      </div>
+      </ul>
+    <% }) %>
+  </ul>
 </div>
 <a href="/#boards/<%= board.id %>/lists/new">Create New List</a>
