@@ -31,9 +31,45 @@ body {
 }
 
 #main {
-  padding-left: 40px;
+  padding-left: 10px;
 }
 
+.container {
+  width: 2000px;
+  overflow: auto;
+}
+
+span.delete {
+  background: white;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 1px 4px 2px 6px;
+  display: none;
+  font-size: 16px;
+  font-weight: bold;
+  float: right;
+  color: #AAA;
+  border-bottom-left-radius: 4px;
+}
+
+li.card {
+  background: white;
+  transition: background .05s;
+}
+
+li.card:hover {
+  cursor: pointer;
+  background: rgba(0,0,100,.05);
+}
+
+li.card:hover > span.delete {
+  display: block;
+}
+
+span.delete:hover {
+  color: #333;
+}
 ul {
   list-style: none;
 }
@@ -42,10 +78,11 @@ ul.board-container {
 }
 
 ul.list-container {
-  border-radius: 7px;
+  border-radius: 3px;
   float: left;
-  padding: 20px;
+  padding: 10px;
   color: black;
+  height: 800px;
 }
 
 li.list-title {
@@ -56,21 +93,34 @@ li.list-title {
 
 ul.card-container {
   float: left;
-  border-radius: 7px;
-  padding: 20px;
-  margin-right: 40px;
+  border-radius: 3px;
+  padding: 10px;
+  margin-right: 10px;
   width: 250px;
   background: #DCDCDC;
+  margin-bottom: 30px;
+  color: black;
 //  border: 1px solid orange;
 }
 
 li.card {
-  border-radius: 7px;
+  position: relative;
+  border-radius: 3px;
   margin-bottom: 10px;
   padding: 5px;
   background: #FFFEFE;
   border-bottom: 1px solid #BBB;
   color: black;
+  word-wrap: break-word
+}
+
+.new-card {
+  display: block;
+}
+
+div.new-card .inactive {
+  display: none;
+  background: green;
 }
 
 .group:after {
