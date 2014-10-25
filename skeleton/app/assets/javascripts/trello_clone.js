@@ -17,3 +17,6 @@ window.TrelloClone = {
 $(function () {
   TrelloClone.initialize();
 })
+
+//Commit Friday's work to new branch
+//Start work from home on master branch
