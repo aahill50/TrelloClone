@@ -1,0 +1,12 @@
+<div class="list">
+	<li class="list-title"><%= list.get("title") %></li>
+	<ul class="list-cards">
+	</ul>
+	<div class="add-card"></div>
+	<form class="delete-list">
+		<input type="hidden" name="list[id]" value=<%= list.id %>>
+		<button class="delete-list">
+			Delete this list
+		</button>
+	</form>
+</div>

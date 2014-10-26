@@ -15,3 +15,73 @@
 
 @import "bootstrap";
 @import "font-awesome";
+
+html, body, div, ul, li, nav {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	background: inherit;
+}
+
+ul {
+	list-style: none;
+}
+
+body {
+	font-family: sans-serif;
+	background: #23719f;
+}
+
+#main {
+	width: 6000px;
+	padding: 10px;
+	color: white;
+}
+
+.lists {
+}
+
+.new-list.inactive{
+	display: none;
+}
+
+.new-list {
+	display: block;
+}
+
+
+.list-title {
+	color: black;
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+.list {
+	float: left;
+	background: #e3e3e3;
+	padding:10px;
+	margin-right: 10px;
+	width: 260px;
+	border-radius: 5px;
+}
+
+.card {
+	background: white;
+	color: black;
+	margin-bottom: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border-bottom: 1px solid #ccc;
+}
+
+.card:hover {
+	cursor: pointer;
+	background: rgba(0,0,0, .05);
+}
+
+.group:after {
+	content: "";
+	clear: both;
+	display: block;
+}

@@ -2,3 +2,21 @@
 # it should include the board
 #  - its lists
 #    - the cards for each list
+
+json.id @board.id
+
+json.title @board.title
+
+json.lists @board.lists do |list|
+	json.id list.id
+	json.title list.title
+	json.ord list.ord
+
+	json.cards list.cards do |card|
+		json.id card.id
+		json.list_id card.list_id
+		json.title card.title
+		json.description card.description
+		json.ord card.ord
+	end
+end
